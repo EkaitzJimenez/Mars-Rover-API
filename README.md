@@ -2,20 +2,20 @@
 
 Se encarga de obtener todos los datos recibidos mediante API REST del Rover de la misión Curiosity de la NASA.
 
-##Tecnologías usadas:
+## Tecnologías usadas:
 
 - WPF
 - .NET 9.0
 - Microsoft Visual Studio Community 2022
 - API REST (NASA Open API REST)
 
-##Requisitos del sistema y dependencias necesarias
+## Requisitos del sistema y dependencias necesarias
 
 - El sistema operativo debe ser Windows 10 o superior.
 - Framework .NET 9.0 instalado en el sistema.
 - IDE: Visual Studio 2022 Community Edition.
 
-##Pasos para instalar y ejecutar la aplicación en un entorno de desarrollo
+## Pasos para instalar y ejecutar la aplicación en un entorno de desarrollo
 
 1. Abrir Visual Studio 2022 Community 
 2. Seleccionar “Clonar un repositorio” 
@@ -26,12 +26,12 @@ Se encarga de obtener todos los datos recibidos mediante API REST del Rover de l
 7. Para ejecutar el proyecto. Seleccionar el botón ”iniciar Depuración”
 8. Debería compilarse correctamente e iniciar la aplicación. Podría tardar unos minutos.
 
-##Estructura del Proyecto
+## Estructura del Proyecto
 - `Controllers/` → Lógica de la API (PhotosController)
 - `Models/` → Clases Photo, Photos, Camera, Rover
 - `Views/` → Interfaz de usuario en XAML (PhotoView.xaml, PhotoDetailsWindow.xaml)
 
-##API REST NASA utilizada
+## API REST NASA utilizada
 - NASA Mars Rover Photos -> API https://api.nasa.gov/
 
 
