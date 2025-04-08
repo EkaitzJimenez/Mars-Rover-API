@@ -1,0 +1,62 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:av="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="av"
+    x:Class="Wpf_Ejercicio_4_Ekaitz_Jimenez.Views.PhotosView"
+    Title="Mars Rover API" Height="450" Width="800">
+
+    <!--Contenedor de la interfaz-->
+    <Grid>
+        <!-- Definir las filas en grid-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Titulo de la aplicación-->
+        <TextBlock Text="Bienvenido a la aplicación de fotos de Marte" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   Grid.Row="0"
+                   Margin="0,10,0,10"/>
+        
+        <!-- Mostrar los datos recibidos de la Api en un Datagrid -->
+        <DataGrid x:Name="PhotosDataGrid" 
+          Grid.Row="1"
+          Margin="10"
+          AutoGenerateColumns="False" 
+          IsReadOnly="True"
+          SelectionChanged="PhotosDataGrid_data">
+            <!-- Columnas con los datos de la API-->
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" Width="Auto"/>
+                <DataGridTextColumn Header="Cámara" Binding="{Binding camera.name}" Width="Auto"/>
+                <DataGridTextColumn Header="Nombre largo(cámara)" Binding="{Binding camera.full_name}" Width="Auto"/>
+                <DataGridTextColumn Header="Fecha terrestre" Binding="{Binding earth_date}" Width="Auto"/>
+                <DataGridTextColumn Header="Misión" Binding="{Binding rover.name}" Width="Auto"/>
+                <DataGridTextColumn Header="Estado" Binding="{Binding rover.status}" Width="Auto"/>
+                <DataGridTemplateColumn Header="Foto" Width="150">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding img_src}" Stretch="Uniform" Width="200" Height="150"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!--Botón que acciona el muestreo de datos-->
+        <Button Content="Obtener datos de la NASA" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Top" 
+                Click="ObtenerDatos"
+                Grid.Row="2"
+                Margin="0,10,0,10"/>
+    </Grid>
+</Window>
